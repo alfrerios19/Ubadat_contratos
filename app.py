@@ -123,6 +123,35 @@ for i in range(int(num_aloj)):
 
 context["alojamientos"] = alojamientos
 
+# ---------------------- TRANSPORTES DINÁMICOS ----------------------
+st.markdown("## 🚗 Transportes")
+
+num_transp = st.number_input(
+    "Número de transportes", min_value=0, max_value=20, step=1
+)
+
+transportes = []
+
+for i in range(int(num_transp)):
+    st.markdown(f"### Transporte {i+1}")
+
+    num_transporte = st.text_input(f"Nº Transporte {i+1}")
+    origen = st.text_input(f"Origen {i+1}")
+    destino = st.text_input(f"Destino {i+1}")
+    fecha = st.text_input(f"Fecha {i+1}")
+    horario = st.text_input(f"Horario {i+1}")
+
+    transportes.append({
+        "num_transporte": num_transporte,
+        "origen": origen,
+        "destino": destino,
+        "fecha": fecha,
+        "horario": horario
+    })
+
+context["transportes"] = transportes
+
+
 
 # ---------------------- GENERAR DOCUMENTO ----------------------
 if st.button("🖨 Generar Documento"):
@@ -137,6 +166,7 @@ if st.button("🖨 Generar Documento"):
         file_name=f"{ruta_plantilla.stem}_rellenado.docx",
         mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
     )
+
 
 
 
