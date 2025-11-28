@@ -80,7 +80,7 @@ for c in campos:
 st.markdown("## 👥 Viajeros adicionales")
 
 num_viajeros = st.number_input(
-    "Número de viajeros (sin incluir al cliente)", min_value=0, max_value=20, step=1
+    "Número de viajeros (sin incluir al cliente). Rellenar solo en caso de ser necesario", min_value=0, max_value=20, step=1
 )
 
 viajeros = []
@@ -97,7 +97,7 @@ context["viajeros"] = viajeros
 st.markdown("## 🏨 Alojamientos")
 
 num_aloj = st.number_input(
-    "Número de alojamientos", min_value=0, max_value=20, step=1
+    "Número de alojamientos. Rellenar solo en caso de ser necesario", min_value=0, max_value=20, step=1
 )
 
 alojamientos = []
@@ -127,7 +127,7 @@ context["alojamientos"] = alojamientos
 st.markdown("## 🚗 Transportes")
 
 num_transp = st.number_input(
-    "Número de transportes", min_value=0, max_value=20, step=1
+    "Número de transportes. Rellenar solo en caso de ser necesario", min_value=0, max_value=20, step=1
 )
 
 transportes = []
@@ -166,6 +166,7 @@ if st.button("🖨 Generar Documento"):
         file_name=f"{ruta_plantilla.stem}_rellenado.docx",
         mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
     )
+
 
 
 
